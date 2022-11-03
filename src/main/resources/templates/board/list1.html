@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymelead.org">
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width=device-width,initial-scale=1">
+<title>부트 스트랩 공부</title>
+<link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+
+</head>
+<body>
+
+<table class="table table-hover" >
+	<thead>
+	<tr class="text-center">
+		<th>번호</th>
+		<th>제목</th>
+		<th>내용</th>
+		<th>조회수</th>
+		<th>작성자</th>
+		<th>작성시간</th>
+	</tr>
+	</thead>
+	
+	
+	<tbody id = "tbody" class="text-center">
+			<tr th:each="list,index : ${resultMap.list}" th:with="paging=${resultMap.paging}">
+			
+				<td>
+					<span th:text="${(resultMap.totalCnt - index.index) - (paging.pageNumber * paging.pageSize)}"></span>
+				</td>
+				<td>
+						<a th:href="@{./view(id=${list.id})}"><span th:text="${list.title}"></span></a>
+				</td>
+				
+				<td>
+						<span th:text="${list.content}"></span>
+				</td>
+				<td>
+						<span th:text="${list.readCnt}"></span>
+				</td>
+				<td>
+						<span th:text="${list.registerId}"></span>
+				</td>
+				
+			
+				<td>
+						<span th:text="${list.registerTime}"></span>
+				</td>
+				<tr>
+		
+		
+
+		</tbody>
+		</table>
+		
+		
+	
+            
+    <!--부트스트랩 js, jquery 추가-->
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/lib/bootstrap.min.js"></script>
+    
+</body>
+</html>
