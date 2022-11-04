@@ -1268,7 +1268,6 @@
 
       this._slide(direction > 0 ? DIRECTION_RIGHT : DIRECTION_LEFT);
     }
-
     _addEventListeners() {
       if (this._config.keyboard) {
         EventHandler.on(this._element, EVENT_KEYDOWN, event => this._keydown(event));
@@ -1283,7 +1282,6 @@
         this._addTouchEventListeners();
       }
     }
-
     _addTouchEventListeners() {
       const hasPointerPenTouch = event => {
         return this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH);

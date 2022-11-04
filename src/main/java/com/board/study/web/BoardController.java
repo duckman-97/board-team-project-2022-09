@@ -38,9 +38,9 @@ public class BoardController {
 	
 	
 	
-	@GetMapping("/board/writer")
+	@GetMapping("/board/write")
 	public String getBoardWritePage(Model model,BoardRequestDto boardRequestDto) {
-		return "/board/writer";
+		return "/board/write";
 	}
 	
 	
@@ -65,7 +65,7 @@ public class BoardController {
 	
 	
 	
-	@PostMapping("/board/writer/action")
+	@PostMapping("/board/write/action")
 	public String boardWriteAction(Model model,BoardRequestDto boardRequestDto)throws Exception{
 		
 		try {
@@ -81,6 +81,8 @@ public class BoardController {
 		return "redirect:/board/list";
 		
 	}
+	
+
 	
 	
 	
